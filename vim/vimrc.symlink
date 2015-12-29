@@ -5,12 +5,15 @@
 
 " required for vundle to run
 
+" start pathogen
+execute pathogen#infect()
+filetype plugin indent on
+
 set nocompatible " not compatible with vi
-filetype off " required for vundle
 set autoread " detect when a file is changed
 
 " load plugins from vundle
-source ~/.vim/plugins.vim
+"source ~/.vim/plugins.vim
 
 "colorscheme industry
 
@@ -18,8 +21,8 @@ source ~/.vim/plugins.vim
 set backspace=indent,eol,start
 
 " set a map leader for more key combos
-let mapleader = '`'
-let g:mapleader = '`'
+let mapleader = ','
+let g:mapleader = ','
 
 set history=1000 " change history to 1000
 set textwidth=120
@@ -101,12 +104,14 @@ set relativenumber " show relative line numbers
 set number " show the current line number"
 
 " draw fancy line numbers
-highlight LineNr ctermbg=0 ctermfg=7 guibg=#2b2b2b
+highlight LineNr ctermbg=8 ctermfg=15 guibg=#2b2b2b
 
 " highlight current line number
 " set current line number bg for contrast 
-highlight cursorLine ctermbg=8
-highlight CursorLineNr term=bold ctermfg=15
+highlight cursorLine ctermbg=None ctermfg=3
+highlight CursorLineNr term=bold ctermbg=0 ctermfg=3
+
+" Wrapping/Line breaks
 set wrap "turn on line wrapping
 set wrapmargin=8 " wrap lines when coming within n characters from side
 set linebreak " set soft wrapping
@@ -362,8 +367,20 @@ nnoremap <silent> <leader>u :call HtmlUnEscape()<cr>
 " => Plugins {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+
 " close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=0
+let g:NERDTreeQuitOnOpen=1
 " show hidden files in NERDTree
 let NERDTreeShowHidden=1
 " remove some files by extension
