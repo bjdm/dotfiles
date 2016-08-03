@@ -1,9 +1,5 @@
-" vim:fdm=marker
-
 
 " => General {{{
-
-" required for vundle to run
 
 " start pathogen
 execute pathogen#infect()
@@ -15,8 +11,6 @@ set autoread " detect when a file is changed
 " load plugins from vundle
 "source ~/.vim/plugins.vim
 
-"colorscheme industry
-
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
 
@@ -25,7 +19,7 @@ let mapleader = ','
 let g:mapleader = ','
 
 set history=1000 " change history to 1000
-set textwidth=120
+set textwidth=100
 
 " Tab control
 set noexpandtab " insert tabs rather than spaces for <Tab>
@@ -53,7 +47,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " code folding settings
 set foldmethod=syntax " fold based on indent
 set foldnestmax=10 " deepest fold is 10 levels
-"set nofoldenable " don't fold by default
+set nofoldenable " don't fold by default
 set foldlevel=1
 
 " }}}
@@ -66,7 +60,7 @@ set hidden " current buffer can be put into background
 set showcmd " show incomplete commands
 set noshowmode " don't show which mode disabled for PowerLine
 set wildmode=list:longest " complete files like a shell
-set scrolloff=3 " lines of text around cursor
+set scrolloff=10 " lines of text around cursor
 set shell=$SHELL
 set cmdheight=1 " command bar height
 
@@ -146,8 +140,8 @@ set laststatus=2 " show the status line all the time
 " Close the current buffer
 " noremap <C-x> <cr>
 
-" remap esc
-inoremap jk <esc>
+" remap esc to qq to exit when in insert mode
+inoremap qq <esc>
 
 " markdown to html
 nmap <leader>md :%!markdown --html4tags <cr>
@@ -159,7 +153,7 @@ nmap <leader><space> :%s/\s\+$<cr>
 nmap <silent> <leader>b :bw<cr>
 
 " shortcut to save
-nmap <leader>, :w<cr>
+nmap <leader>; :w<cr>
 
 " disable Ex mode
 noremap Q <NOP>
@@ -189,7 +183,7 @@ nmap ;s :set invspell spelllang=en<cr>
 " set invlist
 set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
-set showbreak=↪
+"set showbreak=↪
 nmap <leader>l :set list!<cr>
 
 " Textmate style indentation
@@ -367,7 +361,8 @@ nnoremap <silent> <leader>u :call HtmlUnEscape()<cr>
 " => Plugins {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" syntastic settings
+"
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -378,7 +373,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
-
+" NERDTree
 " close NERDTree after a file is opened
 let g:NERDTreeQuitOnOpen=1
 " show hidden files in NERDTree
@@ -390,6 +385,7 @@ nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
 
+" CtrlP
 " map fuzzyfinder (CtrlP) plugin
 " nmap <silent> <leader>t :CtrlP<cr>
 nmap <silent> <leader>r :CtrlPBuffer<cr>
