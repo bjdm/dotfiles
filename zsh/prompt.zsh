@@ -16,7 +16,7 @@
 # %(?..) => prompt conditional - %(condition.true.false)
 
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git # You can add hg too if needed: `git hg`
+zstyle ':vcs_info:*' enable git hg # You can add hg too if needed: `git hg`
 zstyle ':vcs_info:git*' formats ' %b'
 zstyle ':vcs_info:git*' actionformats ' %b|%a'
 
