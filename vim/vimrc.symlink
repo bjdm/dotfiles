@@ -1,5 +1,8 @@
+" => General 
+" {{{
 
-" => General {{{
+" start powerline
+set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim
 
 " start pathogen
 execute pathogen#infect()
@@ -52,7 +55,8 @@ set foldlevel=1
 
 " }}}
 
-" => User Interface  {{{
+" => User Interface  
+" {{{
 
 set so=7 " set 7 lines to the cursors - when moving vertical
 set wildmenu " enhanced command line completion
@@ -116,7 +120,8 @@ set smartindent
 
 " }}}
 
-" => Files, backups, and undo {{{
+" => Files, backups, and undo 
+" {{{
 
 "set nobackup
 "set nowritebackup
@@ -126,13 +131,16 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " }}}
 
-" => StatusLine {{{
+" => StatusLine 
+" {{{
 
+hi StatusLine ctermbg=8 ctermfg=15
 set laststatus=2 " show the status line all the time
 
 " }}}
 
-" => Mappings {{{
+" => Mappings 
+" {{{
 " General mappings/shortcuts for functionality
 " Additional, plugin-specific mappings are located under
 " the plugins section
@@ -235,7 +243,8 @@ nmap <leader>w :setf textile<cr> :Goyo<cr>
 
 " }}}
 
-" => Functions {{{
+" => Functions 
+" {{{
 
 " Window movement shortcuts
 " move to the window in the direction shown, or create a new window
@@ -358,9 +367,8 @@ nnoremap <silent> <leader>u :call HtmlUnEscape()<cr>
 
 " }}}
 
-" => Plugins {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" => Plugins 
+" {{{
 "
 " Syntastic
 set statusline+=%#warningmsg#
@@ -370,7 +378,7 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 
 
 " NERDTree
@@ -398,16 +406,15 @@ let g:ctrlp_working_path_mode = 'ra'
 "             \ 'dir': '\.git$\|node_modules$\|bower_components$\|\.hg$\|\.svn$',
 "             \ 'file': '\.exe$\|\.so$'
 "             \ }
+
 " only show files that are not ignored by git
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " search the nearest ancestor that contains .git, .hg, .svn
 let g:ctrlp_working_path_mode = 2
 
-
 " don't hide quotes in json files
 let g:vim_json_syntax_conceal = 0
-
 
 let g:SuperTabCrMapping = 0
 

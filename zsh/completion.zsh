@@ -6,3 +6,5 @@ zstyle ':completion:*' insert-tab pending
 
 # default to file completion
 zstyle ':completion:*' completer _expand _complete _files _correct _approximate
+
+bindkey '^R' history-incremental-search-backward

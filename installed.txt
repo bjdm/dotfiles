@@ -1,0 +1,10 @@
+
+
+
+psutils
+lshw
+lscpu
+lspci
+lsusb
+lsblk
+lm-sensors

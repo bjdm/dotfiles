@@ -1,5 +1,6 @@
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
+export TERM=rxvt-unicode-256color
 
 # define the code directory
 if [[ -d ~/code ]]; then
@@ -42,3 +43,5 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
+
+#. $ZSH/powerline.zsh

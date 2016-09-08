@@ -55,73 +55,39 @@
 ! True: simulate reverse video by foreground and background colours;
 ! URxvt*reverseVideo: boolean
 
-!!!!!!!!!!!!!!!!!!!!!
-! Gruvbox
-! !!!!!!!!!!!!!!!!!!!
-
-URxvt*foreground: #ebdbb2
-URxvt*background: #282828
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!		My custom colour palette										!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+URxvt*foreground: #c5c8c6
+URxvt*background: #111111
 
 ! Colours are 0-7 for normal, 8-15 for highlights
 ! Black/Dark Grey
-URxvt*color0: #282828
-URxvt*color8: #928374
+URxvt*color0: #282a2e
+URxvt*color8: #373b41
 !DarkRed + Red
-URxvt*color1: #cc241d
-URxvt*color9: #fb4934
+URxvt*color1: #980808
+URxvt*color9: #B43131
 ! DarkGreen + Green
-URxvt*color2: #98971a
-URxvt*color10: #b8bb26
+URxvt*color2: #107213
+URxvt*color10: #4aa24a
 ! DarkYellow + Yellow
-URxvt*color3: #d79921
-URxvt*color11: #fabd2f
+URxvt*color3: #f4b027
+URxvt*color11: #FFB829
 ! DarkBlue + Blue
-URxvt*color4: #458588
-URxvt*color12: #83a598
+URxvt*color4: #033d94
+URxvt*color12: #2f82c6
 ! DarkMagenta + Magenta
-URxvt*color5: #b16286
-URxvt*color13: #d3869b
+URxvt*color5: #960a2f
+URxvt*color13: #e20f47
 ! DarkCyan + Cyan
-URxvt*color6: #689d6a
-URxvt*color14: #8ec07c
+URxvt*color6: #008170
+URxvt*color14: #52e2d6
 ! LightGrey + White
-URxvt*color7: #a89984
-URxvt*color16: #ebdbb2
-
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!		My custom colour palette										!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!
-!URxvt*foreground: #c5c8c6
-!URxvt*background: #111111
-!
-!! Colours are 0-7 for normal, 8-15 for highlights
-!! Black/Dark Grey
-!URxvt*color0: #282a2e
-!URxvt*color8: #373b41
-!!DarkRed + Red
-!URxvt*color1: #980808
-!URxvt*color9: #B43131
-!! DarkGreen + Green
-!URxvt*color2: #107213
-!URxvt*color10: #4aa24a
-!! DarkYellow + Yellow
-!URxvt*color3: #f4b027
-!URxvt*color11: #FFB829
-!! DarkBlue + Blue
-!URxvt*color4: #033d94
-!URxvt*color12: #2f82c6
-!! DarkMagenta + Magenta
-!URxvt*color5: #960a2f
-!URxvt*color13: #e20f47
-!! DarkCyan + Cyan
-!URxvt*color6: #008170
-!URxvt*color14: #52e2d6
-!! LightGrey + White
-!URxvt*color7: #cccccc
-!URxvt*color16: #ffffff
+URxvt*color7: #cccccc
+URxvt*color16: #ffffff
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -187,8 +153,7 @@ URxvt*color16: #ebdbb2
 !
 ! Select the fonts to be used. This is a comma separated list of font
 ! URxvt*font:  ttf: Inconsolata:style=Regular:pixelsize=14
-URxvt*font:	xft:Inconsolata\-dz:style=Regular:pixelsize=14:antialias=true:hinting=slight
-URxvt.letterSpace: -1
+URxvt*font:	xft:Inconsolata\-dz:style=Regular:pixelsize=16:antialias=true:hinting=slight
 
 ! URxvt*boldFont: fontlist
 
