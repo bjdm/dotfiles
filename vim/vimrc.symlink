@@ -1,30 +1,25 @@
-" => General 
+" General: ---------------------------------------------------------------------
 " {{{
 
-" start powerline
-set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim
+set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim	" start powerline
 
 " start pathogen
-execute pathogen#infect()
-filetype plugin indent on
+execute pathogen#infect()											
+filetype plugin indent on											" turn on pathogen related settings
 
-set nocompatible " not compatible with vi
-set autoread " detect when a file is changed
+set nocompatible													" turn off vi compatibility
+set autoread														" autodetect when a file is changed
 
-" load plugins from vundle
-"source ~/.vim/plugins.vim
+set backspace=indent,eol,start										" make backspace behave in a sane manner
 
-" make backspace behave in a sane manner
-set backspace=indent,eol,start
-
-" set a map leader for more key combos
-let mapleader = ','
+let mapleader = ','													" set a map leader for more key combos
 let g:mapleader = ','
 
-set history=1000 " change history to 1000
-set textwidth=100
+set history=1000													" change history to 1000
+set textwidth=100													" change line width to 100
 
 " Tab control
+" TODO fix this
 set noexpandtab " insert tabs rather than spaces for <Tab>
 set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set tabstop=4 " the visible width of tabs
@@ -39,13 +34,12 @@ if has('mouse')
 endif
 
 "TODO find out what this does
-set clipboard=*
+set clipboard=unnamedplus
 " faster redrawing
 set ttyfast
 
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-
 
 " code folding settings
 set foldmethod=syntax " fold based on indent
@@ -55,32 +49,32 @@ set foldlevel=1
 
 " }}}
 
-" => User Interface  
+" User Interface: -------------------------------------------------------------- 
 " {{{
 
-set so=7 " set 7 lines to the cursors - when moving vertical
-set wildmenu " enhanced command line completion
-set hidden " current buffer can be put into background
-set showcmd " show incomplete commands
-set noshowmode " don't show which mode disabled for PowerLine
-set wildmode=list:longest " complete files like a shell
-set scrolloff=10 " lines of text around cursor
+set so=7									" set 7 lines to the cursors - when moving vertical
+set wildmenu								" enhanced command line completion
+set hidden									" current buffer can be put into background
+set showcmd									" show incomplete commands
+set noshowmode								" don't show which mode disabled for PowerLine
+set wildmode=list:longest					" complete files like a shell
+set scrolloff=10							" lines of text around cursor
 set shell=$SHELL
-set cmdheight=1 " command bar height
+set cmdheight=1								" command bar height
 
-set title " set terminal title
+set title									" set terminal title
 
 " Searching
-set ignorecase " case insensitive searching
-set smartcase " case-sensitive if expresson contains a capital letter
-set hlsearch
-set incsearch " set incremental search, like modern browsers
-set nolazyredraw " don't redraw while executing macros
+set ignorecase								" case insensitive searching
+set smartcase								" case-sensitive if expresson contains a capital letter
+set hlsearch								" highlights all occurences of the search term
+set incsearch								" set incremental search, like modern browsers
+set nolazyredraw							" don't redraw while executing macros
 
-set magic " Set magic on, for regex
+set magic									" Set magic on, for regex
 
-set showmatch " show matching braces
-set mat=2 " how many tenths of a second to blink
+set showmatch								" show matching braces
+set mat=2									" how many tenths of a second to blink
 
 " error bells
 set noerrorbells
@@ -92,22 +86,11 @@ set tm=500
 syntax on
 
 set encoding=utf8
-let base16colorspace=256  " Access colors present in 256 colorspace"
-set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
-execute "set background=".$BACKGROUND
-"execute "colorscheme ".$THEME
+set termguicolors							" Allows 256bit color space
 
-" set number " show line numbers
+" show line numbers
 set relativenumber " show relative line numbers
-set number " show the current line number"
-
-" draw fancy line numbers
-highlight LineNr ctermbg=8 ctermfg=15 guibg=#2b2b2b
-
-" highlight current line number
-" set current line number bg for contrast 
-highlight cursorLine ctermbg=None ctermfg=3
-highlight CursorLineNr term=bold ctermbg=0 ctermfg=3
+set number " show the current line number
 
 " Wrapping/Line breaks
 set wrap "turn on line wrapping
@@ -120,7 +103,7 @@ set smartindent
 
 " }}}
 
-" => Files, backups, and undo 
+" Files Backups Undo: ----------------------------------------------------------
 " {{{
 
 "set nobackup
@@ -131,15 +114,13 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " }}}
 
-" => StatusLine 
+" StatusLine: ------------------------------------------------------------------
 " {{{
-
-hi StatusLine ctermbg=8 ctermfg=15
 set laststatus=2 " show the status line all the time
 
 " }}}
 
-" => Mappings 
+" Mappings: -------------------------------------------------------------------- 
 " {{{
 " General mappings/shortcuts for functionality
 " Additional, plugin-specific mappings are located under
@@ -243,10 +224,20 @@ nmap <leader>w :setf textile<cr> :Goyo<cr>
 
 " }}}
 
-" => Functions 
+" Functions: -------------------------------------------------------------------  
 " {{{
 
-" Window movement shortcuts
+" Show syntax highlighting groups for work under cursor {{{
+nmap <leader>st :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+	if !exists("*synstack")
+		return
+	endif
+	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunction
+"}}}
+
+" Window movement shortcuts {{{
 " move to the window in the direction shown, or create a new window
 function! WinMove(key)
     let t:curwin = winnr()
@@ -260,8 +251,9 @@ function! WinMove(key)
         exec "wincmd ".a:key
     endif
 endfunction
+" }}}
 
-" recursively search up from dirname, sourcing all .vimrc.local files along the way
+" recursively search up from dirname, sourcing all .vimrc.local files along the way {{{
 function! ApplyLocalSettings(dirname)
     " convert windows paths to unix style
     let l:curDir = substitute(a:dirname, '\\', '/', 'g')
@@ -279,8 +271,9 @@ function! ApplyLocalSettings(dirname)
         exec ':source' . l:settingsFile
     endif
 endfunction
+" }}}
 
-" smart tab completion
+" smart tab completion {{{
 function! Smart_TabComplete()
     let line = getline('.')                         " current line
 
@@ -301,8 +294,9 @@ function! Smart_TabComplete()
         return '\<C-X>\<C-O>'                         " plugin matching
     endif
 endfunction
+" }}}
 
-" execute a custom command
+" execute a custom command {{{
 function! RunCustomCommand()
     up
     if g:silent_custom_command
@@ -311,15 +305,21 @@ function! RunCustomCommand()
         execute '!' . s:customcommand
     endif
 endfunction
+" }}}
 
+" set a custom vimscript command {{{
 function! SetCustomCommand()
     let s:customcommand = input('Enter Custom Command$ ')
 endfunction
+" }}}
 
+" trim whiespace {{{
 function! TrimWhiteSpace()
 	%s/\s\+$//e
 endfunction
+" }}}
 
+" highlight current word (allows multiple highlights) {{{
 function! HiInterestingWord(n)
     " Save our location.
     normal! mz
@@ -342,6 +342,7 @@ function! HiInterestingWord(n)
     " Move back to our original location.
     normal! `z
 endfunction
+" }}}
 
 nnoremap <silent> <leader>1 :call HiInterestingWord(1)<cr>
 nnoremap <silent> <leader>2 :call HiInterestingWord(2)<cr>
@@ -357,31 +358,42 @@ hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#b88853 ctermbg=137
 hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
 hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
 
+" unescape html {{{
 function! HtmlUnEscape()
   silent s/&lt;/</eg
   silent s/&gt;/>/eg
   silent s/&amp;/\&/eg
 endfunction
+"}}}
 
 nnoremap <silent> <leader>u :call HtmlUnEscape()<cr>
 
 " }}}
 
-" => Plugins 
+" Plugins: --------------------------------------------------------------------- 
 " {{{
 "
-" Syntastic
+" Syntastic:  ------------------------------------------------------------------
+" {{{
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_error_symbol = "\u2716"
+let g:syntastic_warning_symbol = "\u2716"
+let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+let g:syntastic_enable_balloons = 1
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_loc_list_height = 4
+let g:syntastic_stl_format = "[%E{Err: %fe #%e}]"
 
+"}}}
 
-" NERDTree
+" NERDTree:  -------------------------------------------------------------------
+" {{{
 " close NERDTree after a file is opened
 let g:NERDTreeQuitOnOpen=1
 " show hidden files in NERDTree
@@ -393,13 +405,17 @@ nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
 
-" CtrlP
+"}}}
+
+" CtrlP: -----------------------------------------------------------------------
+" {{{
 " map fuzzyfinder (CtrlP) plugin
 " nmap <silent> <leader>t :CtrlP<cr>
 nmap <silent> <leader>r :CtrlPBuffer<cr>
 let g:ctrlp_map='<leader>t'
 let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
+
 
 " CtrlP ignore patterns
 " let g:ctrlp_custom_ignore = {
@@ -418,16 +434,39 @@ let g:vim_json_syntax_conceal = 0
 
 let g:SuperTabCrMapping = 0
 
-"if (has("gui_running"))
-"    set guioptions=egmrt
-"    set background=
-"    colorscheme industry 
-"    let g:airline_left_sep=''
-"    let g:airline_right_sep=''
-"    let g:airline_powerline_fonts=0
-"    let g:airline_theme='solarized'
-"endif
+"}}}
+
+" YouCompleteMe: ---------------------------------------------------------------
+" {{{
+
+" increase number of characters before starting to improve performance
+let g:ycm_min_num_of_chars_for_completion = 3
+
+" as you type pop-up (by default is on, leaving this here to remind me)
+let g:ycm_auto_trigger = 1
+
+" turn on/off as you type completion in comments
+let g:ycm_complete_in_comments = 0
+
+" turn on/off as you type completion in strings
+let g:ycm_complete_in_strings = 1
+
+" turn on/off identifiers from comments and strings
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+
+" turn on/off identifiers from ctags (requires exuberant ctags)
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+" turn on/off identifiers from language syntax (uses vim/syntax/...)
+let g:ycm_seed_identifiers_with_syntax = 0
+
+" keys that select the preview window or move down selections in the preview window
+let g:ycm_key_list_select_completion = ['<Down>', '<C-Space>']
+
+" keys that move to the previous selection int he preview window
+let g:ycm_key_list_previous_completion = ['k', '<C-Enter>']
 
 " }}}
 
+colorscheme mybox
 call ApplyLocalSettings(expand('.'))

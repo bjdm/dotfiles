@@ -1,0 +1,45 @@
+[submodule "vim/vim.symlink/bundle/syntastic"]
+	path = vim/vim.symlink/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic
+[submodule "vim/vim.symlink/bundle/ctrlp"]
+	path = vim/vim.symlink/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim
+[submodule "vim/vim.symlink/bundle/nerdtree"]
+	path = vim/vim.symlink/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree
+[submodule "vim/vim.symlink/bundle/gruvbox"]
+	path = vim/vim.symlink/bundle/gruvbox
+	url = git://github.com/morhetz/gruvbox
+[submodule "vim/vim.symlink/bundle/ultisnips"]
+	path = vim/vim.symlink/bundle/ultisnips
+	url = git://github.com/sirver/ultisnips
+[submodule "vim/vim.symlink/bundle/commentary"]
+	path = vim/vim.symlink/bundle/commentary
+	url = git://github.com/tpope/vim-commentary
+[submodule "vim/vim.symlink/bundle/indent-guides"]
+	path = vim/vim.symlink/bundle/indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides
+[submodule "vim/vim.symlink/bundle/snippets"]
+	path = vim/vim.symlink/bundle/snippets
+	url = git://github.com/honza/vim-snippets
+[submodule "vim/vim.symlink/bundle/jedi"]
+	path = vim/vim.symlink/bundle/jedi
+	url = git://github.com/davidhalter/jedi-vim
+[submodule "vim/vim.symlink/bundle/ycm"]
+	path = vim/vim.symlink/bundle/ycm
+	url = git://github.com/valloric/youcompleteme
+[submodule "vim/vim.symlink/bundle/surround"]
+	path = vim/vim.symlink/bundle/surround
+	url = git://github.com/tpope/vim-surround
+[submodule "vim/vim.symlink/bundle/repeat"]
+	path = vim/vim.symlink/bundle/repeat
+	url = git://github.com/tpope/vim-repeat
+[submodule "vim/vim.symlink/bundle/characterize"]
+	path = vim/vim.symlink/bundle/characterize
+	url = git://github.com/tpope/vim-characterize
+[submodule "vim/vim.symlink/bundle/tagbar"]
+	path = vim/vim.symlink/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar
+[submodule "vim/vim.symlink/bundle/python-syntax"]
+	path = vim/vim.symlink/bundle/python-syntax
+	url = git://github.com/hdima/python-syntax
