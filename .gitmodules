@@ -43,3 +43,6 @@
 [submodule "vim/vim.symlink/bundle/python-syntax"]
 	path = vim/vim.symlink/bundle/python-syntax
 	url = git://github.com/hdima/python-syntax
+[submodule "powerline"]
+	path = powerline
+	url = git://github.com/powerline/powerline
