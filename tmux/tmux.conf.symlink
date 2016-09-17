@@ -43,3 +43,4 @@ source ~/.dotfiles/tmux/theme.sh
 source ~/.dotfiles/tmux/keymap.sh
 
 # import powerline
+source ~/.dotfiles/powerline/powerline/bindings/tmux/powerline.conf

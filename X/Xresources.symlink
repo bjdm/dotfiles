@@ -60,11 +60,11 @@
 ! !!!!!!!!!!!!!!!!!!!
 
 URxvt*foreground: #ebdbb2
-URxvt*background: #282828
+URxvt*background: #101112
 
 ! Colours are 0-7 for normal, 8-15 for highlights
 ! Black/Dark Grey
-URxvt*color0: #282828
+URxvt*color0: #101112
 URxvt*color8: #928374
 !DarkRed + Red
 URxvt*color1: #cc241d

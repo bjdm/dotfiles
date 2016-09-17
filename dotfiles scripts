@@ -1,0 +1,7 @@
+dotfiles scripts
+	- bootstrap system
+		- git, vim, powerline etc.
+	- bootstrap dotfiles
+		- pathogen installed
+	- update links
+	- add vim script

@@ -4,6 +4,8 @@
 "set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim	" start powerline
 
 
+
+set nocompatible													" turn off vi compatibility
 set autoread														" autodetect when a file is changed
 
 let mapleader = ','													" set a map leader for more key combos
@@ -21,6 +23,11 @@ set softtabstop=4 " edit as if the tabs are 4 characters wide
 set shiftwidth=4 " number of spaces to use for indent and unindent
 set shiftround " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
+
+if !has('nvim')
+    set mouse=a
+    set ttymouse=xterm2
+endif
 
 "TODO find out what this does
 set clipboard=unnamedplus
@@ -216,6 +223,30 @@ nmap <leader>w :setf textile<cr> :Goyo<cr>
 " Functions: -------------------------------------------------------------------  
 " {{{
 
+" Source a .vim file
+function! s:source_rc(path, ...) abort "{{{
+  let use_global = get(a:000, 0, !has('vim_starting'))
+  let abspath = resolve(expand('~/.config/nvim/rc/' . a:path))
+  if !use_global
+    execute 'source' fnameescape(abspath)
+    return
+  endif
+
+  " substitute all 'set' to 'setglobal'
+  let content = map(readfile(abspath),
+        \ 'substitute(v:val, "^\\W*\\zsset\\ze\\W", "setglobal", "")')
+  " create tempfile and source the tempfile
+  let tempfile = tempname()
+  try
+    call writefile(content, tempfile)
+    execute printf('source %s', fnameescape(tempfile))
+  finally
+    if filereadable(tempfile)
+      call delete(tempfile)
+    endif
+  endtry
+endfunction"}}}
+
 " Show syntax highlighting groups for work under cursor {{{
 nmap <leader>st :call <SID>SynStack()<CR>
 function! <SID>SynStack()
@@ -362,39 +393,12 @@ nnoremap <silent> <leader>u :call HtmlUnEscape()<cr>
 " Plugins: --------------------------------------------------------------------- 
 " {{{
 "
-" Syntastic:  ------------------------------------------------------------------
-" {{{
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
-let g:syntastic_error_symbol = "\u2716"
-let g:syntastic_warning_symbol = "\u2716"
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_enable_balloons = 1
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_loc_list_height = 4
-let g:syntastic_stl_format = "[%E{Err: %fe #%e}]"
+call s:source_rc('plugins.vim')
 
-"}}}
+call s:source_rc('mappings/unite.vim')
 
-" NERDTree:  -------------------------------------------------------------------
-" {{{
-" close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=1
-" show hidden files in NERDTree
-let NERDTreeShowHidden=1
-" remove some files by extension
-let NERDTreeIgnore = ['\.js.map$']
-" Toggle NERDTree
-nmap <silent> <leader>k :NERDTreeToggle<cr>
-" expand to the path of the file in the current buffer
-nmap <silent> <leader>y :NERDTreeFind<cr>
-
-"}}}
+let g:deoplete#enable_at_startup = 1
 
 " CtrlP: -----------------------------------------------------------------------
 " {{{
@@ -424,38 +428,6 @@ let g:vim_json_syntax_conceal = 0
 let g:SuperTabCrMapping = 0
 
 "}}}
-
-" YouCompleteMe: ---------------------------------------------------------------
-" {{{
-
-" increase number of characters before starting to improve performance
-let g:ycm_min_num_of_chars_for_completion = 3
-
-" as you type pop-up (by default is on, leaving this here to remind me)
-let g:ycm_auto_trigger = 1
-
-" turn on/off as you type completion in comments
-let g:ycm_complete_in_comments = 0
-
-" turn on/off as you type completion in strings
-let g:ycm_complete_in_strings = 1
-
-" turn on/off identifiers from comments and strings
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-
-" turn on/off identifiers from ctags (requires exuberant ctags)
-let g:ycm_collect_identifiers_from_tags_files = 1
-
-" turn on/off identifiers from language syntax (uses vim/syntax/...)
-let g:ycm_seed_identifiers_with_syntax = 0
-
-" keys that select the preview window or move down selections in the preview window
-let g:ycm_key_list_select_completion = ['<Down>', '<C-Space>']
-
-" keys that move to the previous selection int he preview window
-let g:ycm_key_list_previous_completion = ['k', '<C-Enter>']
-
-" }}}
 
 colorscheme mybox
 call ApplyLocalSettings(expand('.'))

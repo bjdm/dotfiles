@@ -1,0 +1,1 @@
+/home/brent/.dotfiles/nvim/nvimrc.symlink
