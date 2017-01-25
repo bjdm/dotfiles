@@ -29,7 +29,7 @@ if !exists('g:mybox_bold')
   let g:mybox_bold=1
 endif
 if !exists('g:mybox_italic')
-  if has('gui_running') || $TERM_ITALICS == 'true' || $TERM == 'rxvt-unicode-256color'
+  if has('gui_running') || $TERM_ITALICS == 'true' || match($TERM, '256color') != 1
     let g:mybox_italic=1
   else
     let g:mybox_italic=0

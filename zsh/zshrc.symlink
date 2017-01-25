@@ -1,6 +1,6 @@
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
-export TERM=rxvt-unicode-256color
+export TERM=xterm-256color
 
 # define the code directory
 if [[ -d ~/code ]]; then

@@ -26,6 +26,13 @@ alias du='du -h -c' # calculate disk usage for a folder
 # TODO fix fs
 alias fs="stat -f \"%z bytes\""
 
+
+# }}}
+
+# => Productivity {{{
+alias vim="nvim"
+
+
 # }}}
 
 

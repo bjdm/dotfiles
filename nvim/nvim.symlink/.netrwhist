@@ -1,9 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/brent/.dotfiles/install'
-let g:netrw_dirhist_2='/home/brent/.dotfiles/vim/vim.symlink/bundle/nerdtree'
-let g:netrw_dirhist_3='/home/brent/.dotfiles/vim/vim.symlink/bundle/Vundle.vim'
-let g:netrw_dirhist_4='/home/brent/.dotfiles/vim/vim.symlink/bundle/vim-commentary'
-let g:netrw_dirhist_5='/home/brent/.dotfiles/vim/vim.symlink'
-let g:netrw_dirhist_6='/home/brent/.virtualenv/austrex_budgeter/austrex_budgeter'
-let g:netrw_dirhist_7='/home/brent/.dotfiles/nvim/nvim.symlink/rc/plugins'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/brent/projects/organiser-frontend/scss/_layouts'
+let g:netrw_dirhist_2='/home/brent/.config'
+let g:netrw_dirhist_3='/home/brent/.dotfiles'

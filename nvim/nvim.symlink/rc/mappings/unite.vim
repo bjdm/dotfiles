@@ -3,19 +3,22 @@
 "
 
 " Recursively show files within the current working directory
-nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
+nnoremap <leader>t :Unite -no-split -buffer-name=files -toggle -start-insert file_rec/async:!<cr>
 
 " Show files within the current working directory
-nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files -start-insert file<cr>
+nnoremap <leader>f :Unite -no-split -buffer-name=files -toggle -start-insert file<cr>
 
 " Show most recently used files
-nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
-
-" Show 'outline'??
-nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>r :Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
 
 " Show yank buffer
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert yank<cr>
+nnoremap <leader>y :Unite -buffer-name=yanks -profile-name='yank-search' history/yank<cr>
+nnoremap <leader>Y :Unite
+					\ -winheight=10
+					\ -buffer-name=yanks
+					\ -no-empty
+					\ -direction=botright
+					\ <cr>
 
 " Show buffers
-nnoremap <leader>b :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer<cr>
+nnoremap <leader>b :Unite -quick-match -start-insert -profile-name='buffer-search' buffer -direction=botright -vertical-preview<cr>
