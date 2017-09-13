@@ -8,7 +8,16 @@ if [[ -d ~/code ]]; then
 fi
 
 # load all zsh config files
-for config ($ZSH/**/*.zsh) source $config
+#for config ($ZSH/**/*.zsh) source $config
+
+# Source options
+source ~/tmp/dotfiles/zsh/functions/zshrc.symlink
+
+# Fix character sequences for special characters to work correctly
+source ~/tmp/dotfiles/zsh/functions/zle_specialkeys
+
+# Source aliases
+source ~/tmp/dotfiles/zsh/aliases
 
 if [[ -a ~/.localrc ]]; then
     source ~/.localrc
