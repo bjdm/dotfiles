@@ -1,0 +1,4 @@
+# Put as little as possible in zshenv
+
+# Export ZDOTDIR for easy configuration
+export $ZDOTDIR=/home/brent/tmp/dotfiles/zsh

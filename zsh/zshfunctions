@@ -1,0 +1,3 @@
+# Important functions to be loaded at the start of initialization
+#
+# Keep the number of functions here to an _absolute minimum_.
