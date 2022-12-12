@@ -1,0 +1,33 @@
+javascript/typescript
+	npm
+	nvm
+	javascript-typescript-langserver
+
+
+python
+
+
+
+
+c/cpp
+
+
+
+
+
+haskell
+
+
+
+
+bash/zsh
+
+
+
+
+html
+
+
+
+
+css

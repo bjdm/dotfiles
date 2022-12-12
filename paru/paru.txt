@@ -1,0 +1,13 @@
+paru
+neovim-git
+python-neovim
+steam
+lutris
+wine
+vk3d
+gamemode
+wine
+
+kde
+	ktorrent
+		geoip	

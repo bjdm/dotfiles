@@ -1,0 +1,477 @@
+#### TO BE REMOVED?
+
+#fpath=($ZSH/functions $fpath)
+#autoload -U $ZSH/functions/*(:t)
+
+
+
+#####
+# Changing Directories      [16.2.1]
+# {{{
+
+# If a directory name is entered like a command, cd to that directory
+setopt autocd
+
+# Make cd push the old directory to the dirstack
+setopt auto_pushd
+
+# If cd would fail because the arg is not a dir, try to expand the argument as if it was called the ~expression way
+setopt cdable_vars
+
+# Don't push duplicates onto the dirstack
+setopt pushd_ignore_dups
+
+# Make pushd with no argument act like `pushd ${HOME}`
+setopt pushd_to_home
+
+# Resolve symbolic links and redundant '..' path links
+#setopt chase_dots
+
+# Resolve symbolic links
+setopt chase_links
+
+# Make cd POSIC compliant
+#setopt posix_cd
+
+# Exchange meaning of '+' and '-' in dirstack
+#setopt pushd_minus
+
+# Don't print dirstack when pushing or poping
+#setopt pushd_silent
+
+# }}}
+
+
+#####
+# Completion                    [16.2.2]
+# {{{
+
+# See ./zshcompsys for more configuration
+
+# Reuse last prompt line when tabbing completions
+setopt always_last_prompt
+
+# Move cursor to end of completion
+setopt always_to_end
+
+# Automatically list choices on ambiguous completion
+setopt auto_list
+
+# Automatically use menu completion after second consecutive request for completion
+setopt auto_menu
+
+# Automatically add slash to completed directory parameters
+setopt auto_param_slash
+
+# Automatically remove redundant slashes
+setopt auto_remove_slash
+
+# Don't expand aliases *before* completion has finished
+setopt complete_aliases
+
+# If unset, the cursor is set to the end of the word if completion is started
+#setopt complete_in_word
+
+# Cycle through globbing matches like menu_complete
+setopt glob_complete
+
+# Hash entire command path on completion or correction. First completion is slower but avoids false reports of spelling errors
+setopt hash_list_all
+
+# Complete as much of a completion until it gets ambiguous
+setopt list_ambiguous
+
+# Beep on ambiguous completion
+#setopt list_beep
+
+# Squish completion list to reduce size
+#setopt list_packed
+
+# Sorts completions horizontally
+setopt list_rows_first
+
+# Show filetype when listing completions
+setopt list_types
+
+# Cycle through completions in place. Overrides auto_menu
+#setopt menu_complete
+
+# If attempted completion has exact match and other completions, force exact match only
+#setopt rec_exact
+
+# Extra (unsure of meaning)
+# {{{
+# AUTO_NAME_DIRS
+#    Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory, that will be used by the ‘%~’ and related prompt sequences, and will be available when completion is performed on a word starting with ‘~’. (Otherwise, the parameter must be used in the form ‘~param’ first.) 
+
+#AUTO_PARAM_KEYS <D>
+#    If a parameter name was completed and a following character (normally a space) automatically inserted, and the next character typed is one of those that have to come directly after the name (like ‘}’, ‘:’, etc.), the automatically added character is deleted, so that the character typed comes immediately after the parameter name. Completion in a brace expansion is affected similarly: the added character is a ‘,’, which will be removed if ‘}’ is typed next.
+
+#
+
+
+# }}}
+# }}}
+
+#####
+# Expansion and Globbing        [16.2.3]      
+# {{{
+
+# If a pattern or glob is badly formed, print an error
+#setopt bad_pattern
+
+# Expand braces
+# {{{
+# zsh% setopt no_brace_ccl
+# zsh% print {abc.}file
+# {abc.}file
+# zsh% setopt brace_ccl
+# zsh% print {abc.}file
+# .file afile bfile cfile
+# }}}
+setopt brace_ccl
+
+# Make regular expressions case sensitive
+#setopt case_match
+
+# If pattern for generation has no matches, delete pattern
+setopt csh_null_glob
+
+# Use default zsh-style globbing
+setopt glob_star_short
+
+# =command expansion (same as which)
+setopt equals
+
+# Extended globbing (this is zsh: enable it.)
+setopt extended_glob
+
+# Don't require a leading dot for hidden files
+setopt no_glob_dots
+
+# `foo="*"; print $foo` will print all files
+setopt glob_subst
+
+# Be case sensitive when globbing
+# setopt case_glob
+
+# If a glob does not return matches, remove the glob from the argument list
+setopt null_glob
+
+# }}}
+
+#####
+# History                     [16.2.4]
+# {{{
+
+# History file location
+HISTFILE=~/.zshhistory
+
+# Number of history entries
+HISTSIZE=10000
+
+# Number of history entries saved in $HISTFILE
+SAVEHIST=10000
+
+# Enable '!' history expansion
+setopt bang_hist
+
+# When exiting, append history to entries to $HISTFILE (default)
+setopt append_history
+
+# Save additional info to $HISTFILE
+setopt extended_history
+
+# If the commandline starts with a whitespace, don't add it to history
+setopt hist_ignore_space
+
+# Do not enter duplicate command events into history
+setopt hist_ignore_dups
+
+# Do not enter duplicate commands into history, even if unique invocation
+#setopt hist_ignore_all_dups
+
+# Remove history command invocation from $HISTFILE
+setopt hist_no_store
+
+# Remove superfluous blanks in commands
+setopt hist_reduce_blanks
+
+# Do not save out duplicate command events
+setopt hist_save_no_dups
+
+# Append every single command to $HISTFILE immediately after hitting enter
+setopt inc_append_history
+
+# Same as append_history and inc_append_history together
+setopt share_history
+
+# Reload line from history into commandline buffer before execution
+setopt hist_verify
+
+# }}}
+
+
+#####
+# Initialization            [16.2.5]
+# {{{
+
+# All parameters subsequently defined are automatically exported
+#setopt all_export
+
+# Export all parameters to the environment
+#setopt global_export
+
+# Loads /etc/zprofile, /etc/zshrc and /etc/zlogin before local options
+setopt global_rcs
+
+# Load local config files after global files
+setopt global_rcs
+
+# }}}
+
+
+#####
+# Input/Output              [16.2.6]
+# {{{
+
+# Expand aliases
+#setopt aliases
+
+# Allow '>' to truncate and '>>' to create new file
+# setopt clobber
+
+# Allow zsh to attempt to correct misspelled commands
+setopt correct
+
+# Try to correct all words (may be dangerous with mv etc.)
+#setopt correctall
+
+# Assume dvorak keyboard when using correct/correctall
+#setopt dvorak
+
+# Ignore pressing ^D
+#setopt ignoreeof
+
+# Allow comments in interactive shell
+setopt interactive_comments
+
+# Hash commands so a path search is not require
+setopt hash_cmds
+
+# Hash directory when command name is hashed to avoid lookup
+setopt hash_dirs
+
+# Print a warning message if mail file has been access since last checked
+#setopt mail_warning
+
+# Check for script in current directory, then $PATH
+setopt path_script
+
+# Print exit value when non-zero
+setopt print_exit_value
+
+# Do not confirm rm * commands
+#setopt rm_star_silent
+
+# Wait for 10 seconds when running rm * commands
+#setopt rm_star_wait
+
+# Allow shortform loops ie.
+# for file in *.pdf; lp ${file}
+setopt short_loops
+
+# If a line ends in backquote and has odd number of backquotes, ignore
+# setopt sun_keyboard_hack
+
+# }}}
+
+
+#####
+# Job Control               [16.2.7]
+# {{{
+
+# Automatically recontinue stopped jobs
+#setopt auto_continue
+
+# Resume suspended process if one exists when trying to spawn another
+setopt auto_resume
+
+# Do not run background jobs at lower priority
+setopt no_bg_nice
+
+# Report status of background jobs before exiting a shell
+setopt check_jobs
+
+# Do not send SIGHUP to background process on exit
+setopt nohup
+
+# List jobs in long format
+setopt long_list_jobs
+
+# Allow job control         **ALWAYS SET**
+setopt monitor
+
+# Report status of background jobs immediately
+setopt notify
+
+# If set, stopped jobs are disowned and restarted immediately
+setopt auto_continue
+
+# }}}
+
+
+#####
+# Prompt                        [16.2.8]
+# {{{
+
+# See zshprompt for more configuration
+
+# If set, '!' is treated specially in prompt expansion
+setopt prompt_bang
+
+# Do not print '\r' before printing the prompt
+setopt no_prompt_cr
+
+# Attempt to preserve partial lines (no effect if 'prompt_cr' is used)
+#setopt prompt_sp
+
+# If set, '%' is treated specially in prompt expansion
+setopt prompt_percent
+
+# Turn on various expansions in prompts
+setopt prompt_subst
+
+# Remove any right prompt from display when accepting a command line.
+# This may be useful with terminals with other cut/paste methods ie. TMUX
+#setopt transient_prompt
+
+
+# }}}
+
+
+#####
+# Scripting and Functions      [16.2.9]
+# {{{
+
+# See ./zshfunctions for more scripts and functions
+
+# Output hex-numbers in 'Ox1F' format (see 'octal_zeroes')
+setopt c_bases
+
+# Alter precendences of operators to be more C-like
+#setopt c_precedences
+
+# Run DEBUG trap before each command rather than after
+setopt debug_before_cmd
+
+# Execute ZERR trap on ERR if it exists
+#setopt err_exit
+
+# Return immediately from enclosing function on non-zero status
+#setopt err_return
+
+# Evaluate line numbers indepedent of enclosed environment 
+setopt eval_lineno
+
+# Execute commands. Without being set, commands are read and checked for syntax errors then disgarded
+setopt exec
+
+# Prevents breaks and continues from having an effect outside their scope
+#setopt local_loops
+
+# Shell options are to be restored after returning a function
+#setopt local_options
+
+# Restore  patterns after exiting a function
+#setopt local_paterns
+
+# Enable multiple redirections ie. uptime > uptime0.txt > uptime1.txt
+setopt multios
+
+# Interpret any integer constant beginning with 0 as octal
+#setopt octal_zeroes
+
+# Show info about each file loaded. Similar to xtrace output but for files
+#setopt source_trace
+
+# Print shell input lines as they are read.
+#setopt verbose
+
+# Print commands and arguments as they are executed
+#setopt xtrace
+
+# Print a warning when creating a global parameter by an assignment in a function
+setopt warn_create_global
+
+# }}}
+
+#####
+# TODO: Complete shell state. Pretty sure I haven't missed anything important. Just leave
+# descriptions
+# Shell Emulation           [16.2.10]
+# {{{
+
+# Emulate ksh array handling (can be finicky)
+#setopt ksh_arrays
+
+# Changes the output of setopt without arguments
+#setopt ksh_option_print
+
+# zsh-style wordsplitting; zsh-users normally leave this unset
+setopt no_sh_word_split
+
+# }}}
+
+
+#####
+# Shell State                [16.2.11]
+# {{{
+
+# Force shell state to interactive
+#setopt interactive
+
+# Force shell state to login
+#setopt login
+
+# Enable privileged mode. Used for scripts run as a privileged user (#!/bin/zsh -p)
+#setopt privileged
+
+# Enable restricted mode.       **NFI**
+#setopt restricted
+
+# Used in scripts. Reads commands from STDIN (#!/bin/zsh -c)
+#setopt shin_stdin
+
+# Make the shell exit after the first command from stdin
+#setopt single_command
+
+# }}}
+
+
+#####
+# Line Editor               [16.2.12]
+# {{{
+
+# Beep on error in zle
+#setopt beep
+
+# Avoid beeps
+setopt nobeep
+
+# Assume terminal supports combining characters correctly
+setopt combining_chars
+
+# Start zle in overstrike mode
+#setopt overstrike
+
+# Switch off multiline editing (not advised)
+#setopt single_line_zle
+
+# Use vi keybindings
+setopt vi
+
+# Use ZLE
+setopt zle
+
+# }}}

@@ -1,0 +1,17 @@
+#!/bin/bash
+# Script to automate installing debugpy into an isolated virtualenv
+# for use by nvim-dap
+install() {
+	mkdir -pv ${XDG_DATA_HOME}/debugpy
+	cd ${XDG_DATA_HOME}/debugpy
+	python -m venv debugpy
+	debugpy/bin/python -m pip install debugpy
+}
+
+update() {
+	${XDG_DATA_HOME}/debugpy/debugpy/bin/python -m pip install -U debugpy
+}
+
+install
+
+#vim ft:bash
