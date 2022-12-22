@@ -5,6 +5,10 @@
 # Reverse history search
 bindkey '^R' history-incremental-search-backward
 
+# Autosuggestions
+bindkey '^ ' forward-word 
+bindkey '\E[20;5~' autosuggest-execute			# Note: this is a custom key sequence defined in konsole profile or similar
+
 #####
 # Fix Special Keys
 # {{{
@@ -59,9 +63,3 @@ fi
 # ZLE {{{
 # }}}
 
-# Autosuggestions
-# {{{
-
-bindkey '^ ' autosuggest-execute
-
-# }}}
