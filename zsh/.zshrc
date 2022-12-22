@@ -56,15 +56,6 @@ else
 fi
 #}}}
 
-# Test and then source colour palette
-# {{{
-if [ -f $ZDOTDIR/functions/colours 2> /dev/null ]; then
-	source $ZDOTDIR/functions/colours
-else
-	print "Note: Colour pallete could not be loaded."
-fi
-#}}}
-
 # Test and then source completions palette
 # {{{
 if [ -d $ZDOTDIR/completions 2> /dev/null ]; then
