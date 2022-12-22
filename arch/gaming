@@ -1,7 +1,0 @@
-
-gamemode                      	# A daemon/lib combo that allows games to request a set of optimisations be temporarily applied to the host OS
-lib32-gamemode                	# A daemon/lib combo that allows games to request a set of optimisations be temporarily applied to the host OS
-lib32-vkd3d                   	# Direct3D 12 to Vulkan translation library By WineHQ
-vkd3d                         	# Direct3D 12 to Vulkan translation library By WineHQ
-wine                          	# A compatibility layer for running Windows programs
-wine-mono                     	# Wine's built-in replacement for Microsoft's .NET Framework

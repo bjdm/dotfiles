@@ -1,4 +1,0 @@
-# Run only by login shells.
-# To test whether or not running in a login shell:
-# if [[ -o login ]] ; then echo login shell; else echo _no_ login shell; fi
-

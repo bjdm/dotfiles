@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# Add pacman descriptions to list of packages
-cat $1 | while read pkg; do
-	des=$(pacman -Si $pkg 2>/dev/null | grep "Description" | sed -n 's/Description\s*:\s\(.*\)$/\1/p')
-	printf "%-30s\t# %s\n" $pkg "$des"
-done
