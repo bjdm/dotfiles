@@ -1,0 +1,95 @@
+amd-ucode                     	# Microcode update image for AMD CPUs
+android-file-transfer         	# Android MTP client with minimalistic UI
+ark                           	# Archiving Tool
+asp                           	# Arch Linux build source file management tool
+autoconf                      	# A GNU tool for automatically configuring source code
+automake                      	# A GNU tool for automatically creating Makefiles
+autopep8                      	# A tool that automatically formats Python code to conform to the PEP 8 style guide
+awesome-terminal-fonts        	# fonts/icons for powerlines
+base                          	# Minimal package set to define a basic Arch Linux installation
+bat                           	# Cat clone with syntax highlighting and git integration
+bison                         	# The GNU general-purpose parser generator
+btrfs-progs                   	# Btrfs filesystem utilities
+clang                         	# C language family frontend for LLVM
+dhcpcd                        	# RFC2131 compliant DHCP client daemon
+dolphin                       	# KDE File Manager
+fakeroot                      	# Tool for simulating superuser privileges
+firefox                       	# Standalone web browser from mozilla.org
+firefox-developer-edition     	# Developer Edition of the popular Firefox web browser
+flex                          	# A tool for generating text-scanning programs
+gcc                           	# The GNU Compiler Collection - C and C++ frontends
+geoip                         	# Non-DNS IP-to-country resolver C library & utils
+git                           	# the fast distributed version control system
+groff                         	# GNU troff text-formatting system
+gwenview                      	# A fast and easy to use image viewer
+htop                          	# Interactive process viewer
+kate                          	# Advanced text editor
+kdeconnect                    	# Adds communication between KDE and your smartphone
+keepassxc                     	# Cross-platform community-driven port of Keepass password manager
+kernel-modules-hook           	# Keeps your system fully functional after a kernel upgrade
+kinfocenter                   	# A utility that provides information about a computer system
+konsole                       	# KDE terminal emulator
+kscreen                       	# KDE screen management software
+ktorrent                      	# A powerful BitTorrent client for KDE
+libnotify                     	# Library for sending desktop notifications
+linux                         	# The Linux kernel and modules
+linux-firmware                	# Firmware files for Linux
+llvm                          	# Compiler infrastructure
+lrzip                         	# Multi-threaded compression with rzip/lzma, lzo, and zpaq
+lua-language-server           	# Lua Language Server coded by Lua
+luacheck                      	# A tool for linting and static analysis of Lua code
+lutris                        	# Open Gaming Platform
+lzop                          	# File compressor using lzo lib
+m4                            	# The GNU macro processor
+make                          	# GNU make utility to maintain groups of programs
+man-db                        	# A utility for reading man pages
+mlocate                       	# Merging locate/updatedb implementation
+mpv                           	# a free, open source, and cross-platform media player
+mtpfs                         	# A FUSE filesystem that supports reading and writing from any MTP device
+mtr                           	# Combines the functionality of traceroute and ping into one tool (CLI version)
+ninja                         	# Small build system with a focus on speed
+noto-fonts-cjk                	# Google Noto CJK fonts
+noto-fonts-emoji              	# Google Noto emoji fonts
+noto-fonts-extra              	# Google Noto TTF fonts - additional variants
+npm                           	# A package manager for javascript
+okular                        	# Document Viewer
+pacman-contrib                	# Contributed scripts and tools for pacman systems
+patch                         	# A utility to apply patch files to original sources
+pavucontrol                   	# PulseAudio Volume Control
+pdftk                         	# Command-line tool for working with PDFs
+pipewire-pulse                	# Low-latency audio/video router and processor - PulseAudio replacement
+pkgconf                       	# Package compiler and linker metadata toolkit
+plasma-desktop                	# KDE Plasma Desktop
+plasma-pa                     	# Plasma applet for audio volume management using PulseAudio
+plasma-wayland-session        	# Plasma Wayland session
+postgresql                    	# Sophisticated object-relational DBMS
+powerdevil                    	# Manages the power consumption settings of a Plasma Shell
+python-ipdb                   	# IPython-enabled pdb
+python-lsp-server             	# Fork of the python-language-server project, maintained by the Spyder IDE team and the community
+python-pyflakes               	# A lint-like tool for Python to identify common errors quickly without executing code
+python-pylint                 	# Analyzes Python code looking for bugs and signs of poor quality
+python-pynvim                 	# Python client for Neovim
+python-rope                   	# Refactoring library
+reflector                     	# A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
+ripgrep                       	# A search tool that combines the usability of ag with the raw speed of grep
+rkward                        	# An easy to use and easily extensible IDE/GUI for R
+sddm                          	# QML based X11 and Wayland display manager
+smartmontools                 	# Control and monitor S.M.A.R.T. enabled ATA and SCSI Hard Drives
+sof-firmware                  	# Sound Open Firmware
+spectacle                     	# KDE screenshot capture utility
+sshfs                         	# FUSE client based on the SSH File Transfer Protocol
+steam                         	# Valve's digital software delivery system
+sudo                          	# Give certain users the ability to run some commands as root
+texinfo                       	# GNU documentation system for on-line information and printed output
+tmux                          	# A terminal multiplexer
+tree                          	# A directory listing program displaying a depth indented list of files
+ttf-dejavu                    	# Font family based on the Bitstream Vera Fonts with a wider range of characters
+ttf-ibm-plex                  	# IBM Plex Mono, Sans, and Serif
+umbrello                      	# UML modeller
+unrar                         	# The RAR uncompression program
+vim                           	# Vi Improved, a highly configurable, improved version of the vi text editor
+wireplumber                   	# Session / policy manager implementation for PipeWire
+yakuake                       	# A drop-down terminal emulator based on KDE konsole technology
+yapf                          	# Python style guide checker
+zsh                           	# A very advanced and programmable command interpreter (shell) for UNIX
+zsh-completions               	# Additional completion definitions for Zsh

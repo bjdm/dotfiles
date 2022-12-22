@@ -1,0 +1,34 @@
+dns security
+firewall
+ntp resolver
+systemd utilities
+optimisation
+
+chat clients
+rss
+printing
+fonts
+tex
+markup
+libreoffice
+
+
+- find the best way to organise systemd units and /etc configuration
+
+USER
+github
+
+
+
+ROOT
+/etc configs
+	sshd
+	pacman
+
+Systemd drop-in files
+	/etc
+		resolved.conf
+			make /etc/systemd/resolved.conf.d/
+			copy drop-in file
+
+	/user

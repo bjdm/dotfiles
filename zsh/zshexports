@@ -1,0 +1,67 @@
+# Set the values for some environment variables.
+
+# Colourise LESS
+# {{{
+# from: https://wiki.archlinux.org/index.php/Color_output_in_console#man
+export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\e[1;33m'     # begin blink
+export LESS_TERMCAP_so=$'\e[01;44;37m' # begin reverse video
+export LESS_TERMCAP_us=$'\e[01;37m'    # begin underline
+export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
+export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
+export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
+export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
+# ]}
+
+# Colour scheme
+#{{{
+
+set noglob
+
+typeset -gA COLOURSCHEME
+COLOURSCHEME[dark0]="#101112"
+COLOURSCHEME[dark0a]="#121314"
+COLOURSCHEME[dark1]="#141617"
+COLOURSCHEME[dark2]="#191A1C"
+COLOURSCHEME[dark3]="#1D1F21"
+COLOURSCHEME[dark4]="#222426"
+COLOURSCHEME[light0]="#ebdbb2"
+COLOURSCHEME[light1]="#5B6066"
+COLOURSCHEME[light2]="#4F5459"
+COLOURSCHEME[light3]="#44484C"
+COLOURSCHEME[light4]="#393C40"
+COLOURSCHEME[neutral_blue]="#0168D2"
+COLOURSCHEME[muted_blue]="#1966B7"
+COLOURSCHEME[dark_blue]="#0154AC"
+COLOURSCHEME[light_blue]="#1E7DDE"
+COLOURSCHEME[pale_blue]="#3688DE"
+COLOURSCHEME[neutral_red]="#B30009"
+COLOURSCHEME[muted_red]="#941A20"
+COLOURSCHEME[dark_red]="#870007"
+COLOURSCHEME[light_red]="#C81C24"
+COLOURSCHEME[pale_red]="#C8323A"
+COLOURSCHEME[neutral_orange]="#FF9900"
+COLOURSCHEME[muted_orange]="#DD901D"
+COLOURSCHEME[dark_orange]="#D07C00"
+COLOURSCHEME[light_orange]="#FFA622"
+COLOURSCHEME[pale_orange]="#FFB13D"
+COLOURSCHEME[neutral_yellow]="#FFC500"
+COLOURSCHEME[muted_yellow]="#DDB11D"
+COLOURSCHEME[dark_yellow]="#D0A000"
+COLOURSCHEME[light_yellow]="#FFCC22"
+COLOURSCHEME[pale_yellow]="#FFD23D"
+COLOURSCHEME[neutral_green]="#0E9500"
+COLOURSCHEME[muted_green]="#1F7B16"
+COLOURSCHEME[dark_green]="#0B7100"
+COLOURSCHEME[light_green]="#27B319"
+COLOURSCHEME[pale_green]="#39B32D"
+COLOURSCHEME[neutral_purple]="#9200A6"
+COLOURSCHEME[muted_purple]="#751D81"
+COLOURSCHEME[dark_purple]="#640073"
+COLOURSCHEME[light_purple]="#C02BD5"
+COLOURSCHEME[pale_purple]="#A949B6"
+COLOURSCHEME[neutral_pink]="#E10097"
+COLOURSCHEME[muted_pink]="#AF2782"
+COLOURSCHEME[dark_pink]="#9B0068"
+COLOURSCHEME[light_pink]="#EA24A9"
+COLOURSCHEME[pale_pink]="#EA41B3"

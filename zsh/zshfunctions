@@ -1,0 +1,30 @@
+# Important functions to be loaded at the start of initialization
+#
+# Keep the number of functions here to an _absolute minimum_.
+
+function politely-link-file ()
+{
+	case "$#" in
+		2 ) local name="File" 
+			;;
+		3 ) local name=$3
+			;;
+		*) printf "Usage:\n\tpolitely-link-file source destination name\n \
+			- source must be an absolute path. \n \
+			- name is optional.\n"
+			return 1
+			;;
+	esac
+	
+	local source_=$1
+	local destination=$2
+	if [[ ! -f $destination ]]; then
+		ln -sf $source_ $destination
+		if readlink -q $destination > /dev/null; then
+			printf "$name was successfully linked.\n"
+		else
+			printf "$name was linked, but it is broken.\n"
+		fi
+	else printf "$name already exists.\n"
+	fi
+}

@@ -1,0 +1,8 @@
+# Packer cache
+nvim/plugin/packer_compiled.lua
+
+# ipython history file
+ipython/profile_default/history.sqlite
+
+# zsh plugin directory
+zsh/.zinit

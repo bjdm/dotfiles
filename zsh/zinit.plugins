@@ -1,0 +1,22 @@
+# Fish like autosuggestions
+zinit load zsh-users/zsh-autosuggestions
+
+# extra completion definitions
+zinit load zsh-users/zsh-completions
+
+# Fish like autosuggestions
+zinit load zsh-users/zsh-autosuggestions
+
+# Autojump for zsh (jump to frequent directories
+#zinit load agkozak/zsh-z
+
+### LEAVE THESE AT THE BOTTOM. FOR INFO, CHECK THE GITHUB
+### IT HAS TO DO WITH ZLE CUSTOM WIDGETS AND COMPINIT
+# Syntax highlight in terminal
+zinit load zsh-users/zsh-syntax-highlighting
+
+# history substring search improvements
+zinit load zsh-users/zsh-history-substring-search
+
+autoload -Uz compinit && compinit
+#vim ft=zsh
