@@ -19,8 +19,7 @@ local servers = {
 		settings = {
 			pylsp = {
 				plugins = {
-					pycodesylte = {
-						ignore = {'W501'},
+					pycodestyle = {
 						maxLineLength = 88
 					},
 					pylint = {
@@ -30,7 +29,12 @@ local servers = {
 						},
 						enabled=true,
 						debounce=200,
+						ignore={'E501'},
+						maxLineLength = 88
 					},
+					yapf = {
+						enabled=true,
+					}
 				},
 			},
 		},
