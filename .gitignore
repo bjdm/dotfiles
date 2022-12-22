@@ -5,4 +5,4 @@ nvim/plugin/packer_compiled.lua
 ipython/profile_default/history.sqlite
 
 # zsh plugin directory
-zsh/.zinit
+zsh/.zcompdump
