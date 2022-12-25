@@ -115,3 +115,5 @@ export PATH="$HOME/code/kde/src/kdesrc-build:$PATH"
 if [[ -f /usr/share/nvm/init-nvm.sh ]]; then
 	source /usr/share/nvm/init-nvm.sh
 fi
+
+zstyle ':completion:*' menu select
