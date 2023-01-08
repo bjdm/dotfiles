@@ -3,7 +3,9 @@
 	email = "bjdm.92@gmail.com"
 [core]
 	editor = nvim
-	pager = nvim -R
+
+[diff]
+	tool = nvim -d
 
 [init]
 	defaultBranch = main
@@ -13,10 +15,19 @@
 [kde]
 	username = bjdm
 
-[color]
-	ui = auto
-
 [alias]
 	lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 [mergetool]
-	path = nvim
+	path = nvim -d
+
+[url "https://invent.kde.org/"]
+	insteadOf = kde:
+
+[url "ssh://git@invent.kde.org/"]
+	pushInsteadOf = kde:
+
+[url "https://aur.archlinux.org/"]
+	insteadOf = aur:
+
+[url "https://gist.github.com/"]
+	insteadOf = gist:

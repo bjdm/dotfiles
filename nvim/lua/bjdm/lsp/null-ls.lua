@@ -29,13 +29,14 @@ local sources = {
 
 	nls.builtins.formatting.black,
 	nls.builtins.formatting.prettier,
+	nls.builtins.formatting.qmllint,
 }
 
 function M.setup(on_attach)
 	nls.setup({
-	sources = sources,
-	on_attach = on_attach
-})
+		sources = sources,
+		on_attach = on_attach
+	})
 end
 
 return M

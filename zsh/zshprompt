@@ -3,7 +3,7 @@
 # %b => current branch
 # %a => current action (rebase/merge)
 #
-# prompt:
+# Prompt - from `man zshmisc` - Expansion of Prompt Sequences:
 # %F		=> color dict
 # %f		=> reset color
 # %~		=> current path
@@ -15,6 +15,11 @@
 # %G		=> 'Glitch' character. Use within %{...%} pair to signify that 
 #				some character will be output. %nG works ie. %2G for 2 width
 #				char
+#
+# Colours: from `man zshzle` - Character Highlighting`
+# %F{$COLOUR} where $COLOUR is one of `black, red, green,  yellow, blue, magneta, cyan, white`
+# %F{$N} where $N is an integer from 0-255
+# %F{$HEX_CODE} where $HEX_CODE is an HTML hex colour code
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git hg # You can add hg too if needed: `git hg`
@@ -54,7 +59,7 @@ needs_push() {
   then
     echo ""
   else
-    echo "%{$fg_bold[magenta]%}☁%f "
+    echo "%{%F{magenta}%}☁%f "
   fi
 }
 
@@ -76,5 +81,5 @@ precmd() {
 }
 
 
-export PS1='%(?.%{%F{blue}%}.%{%F{red}%})%n@%m%f:%F{208}%~%f%{%G❯%}%f '
+export PS1='%(?.%{%F{blue}%}.%{%F{red}%})%n@%m%f:%F{#ffffff}%~%f%{%G❯%}%f '
 export RPS1='`git_dirty`%F{241}$vcs_info_msg_0_%f `needs_push`'

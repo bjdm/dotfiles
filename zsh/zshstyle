@@ -11,3 +11,6 @@ zstyle	':completion:*'		menu	select
 
 # enable LS_COLORS style for completion
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zshcompcache

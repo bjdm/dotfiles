@@ -4,7 +4,6 @@ local log = require("bjdm.log")
 local M = {}
 
 function M.setup(client, buffer)
-	print("Setting up in on_attach")
   local cap = client.server_capabilities
 
   local keymap = {

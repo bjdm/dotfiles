@@ -1,3 +1,6 @@
+## Add custom completions to fpath before compinit
+fpath=($HOME/.config/zsh/completions $fpath)
+
 ##
 # Source setup helper functions
 source $ZDOTDIR/zshfunctions
@@ -56,18 +59,18 @@ else
 fi
 #}}}
 
-# Test and then source completions palette
-# {{{
-if [ -d $ZDOTDIR/completions 2> /dev/null ]; then
-	if [ $(ls $ZDOTDIR/completions | wc -l) -gt 0 ]; then 
-		for file in $ZDOTDIR/completions/**/*(.); do
-			source "$file"
-		done
-	fi
-else
-	print "Note: Completions could not be loaded."
-fi
-#}}}
+# # Test and then source completions palette
+# # {{{
+# if [ -d $ZDOTDIR/completions 2> /dev/null ]; then
+# 	if [ $(ls $ZDOTDIR/completions | wc -l) -gt 0 ]; then 
+# 		for file in $ZDOTDIR/completions/**/*(.); do
+# 			source "$file"
+# 		done
+# 	fi
+# else
+# 	print "Note: Completions could not be loaded."
+# fi
+# #}}}
 
 
 # turn off global variable warning because apparently plugin
@@ -95,25 +98,8 @@ source "$ZDOTDIR/zshstyle"
 
 #vim: fdm=marker
 
-# kdesrc-build ##################################################
+# kdesrc-build #################################################################
 
-## Add kdesrc-build to PATH
+## Add kdesrc-build to PATH and source completions
 export PATH="$HOME/code/kde/src/kdesrc-build:$PATH"
-
-## Run projects built with kdesrc-build
-function kdesrc-run
-{
-  source "$HOME/code/kde/build/$1/prefix.sh" && "$HOME/code/kde/usr/bin/$@"
-}
-#################################################################
-#compdef _gnu_generic ls grep journalctl
-
-#vim: fdm=marker
-
-export PATH="$HOME/code/kde/src/kdesrc-build:$PATH"
-
-if [[ -f /usr/share/nvm/init-nvm.sh ]]; then
-	source /usr/share/nvm/init-nvm.sh
-fi
-
-zstyle ':completion:*' menu select
+fpath=($HOME/.config/zsh/completions $fpath)
